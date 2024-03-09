@@ -1,0 +1,27 @@
+:root {
+    --blue-color: #3B76CF;
+    --bg-color: #D5E3EF;
+    --text-dark-color: #494949;
+    --text-blue-color: #3B76CF;
+    --regular-font-weigth: 400;
+    --medium-font-weigth: 500;
+    --transition: .4s ease;
+    --hover-opacity: .8;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+    font-optical-sizing: auto;
+    color: var(--text-dark-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
