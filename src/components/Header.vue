@@ -15,7 +15,7 @@ export default {}
 <style>
 .header {
   background-color: #d5e3ef;
-  padding: 20px 40px;
+  padding: 20px var(--x-padding-desktop);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,6 +42,7 @@ export default {}
 
 .navigation-link {
   transition: opacity var(--transition);
+  letter-spacing: 1px;
 }
 
 .navigation-link:hover {
