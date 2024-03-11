@@ -3,7 +3,7 @@ export default {}
 </script>
 
 <template>
-  <header class="header">
+  <header class="header section">
     <div class="logo"></div>
     <nav class="navigation">
       <a href="#" class="navigation-link">Вход</a>
@@ -15,6 +15,7 @@ export default {}
 <style>
 .header {
   background-color: #d5e3ef;
+  padding-top: 20px;
   padding: 20px var(--x-padding-desktop);
   display: flex;
   justify-content: space-between;

@@ -3,31 +3,31 @@ export default {}
 </script>
 
 <template>
-  <section class="hero">
-    <h2 class="title">Welcome to <span class="text-blue">Eventer</span></h2>
-    <p class="description">Our goal is to bring people together.</p>
+  <section class="hero section">
+    <h2 class="title">Добро пожаловать в <span class="text-blue">Eventer</span></h2>
+    <p class="description">Наша цель - объединять людей.</p>
     <div id="hero-vector"></div>
   </section>
-  c
 </template>
 
-<style>
+<style scoped>
 .hero {
-  padding: 60px 0 100px;
+  padding-top: 60px;
+  padding-bottom: 100px;
   background-color: var(--bg-color);
   position: relative;
 }
 
 .title {
-  font-size: 100px;
+  font-size: 70px;
   font-weight: var(--medium-font-weigth);
   max-width: 1100px;
-  margin: 0 auto 100px;
+  margin: 0 auto 45px;
 }
 
 .text-blue {
   color: var(--blue-color);
-  font-size: 135px;
+  font-size: 100px;
   padding: 0 20px 20px;
   border: 1px dashed var(--blue-color);
   border-radius: 10px;
@@ -36,7 +36,8 @@ export default {}
 .description {
   max-width: 1100px;
   margin: 0 auto;
-  font-size: 45px;
+  font-size: 30px;
+  opacity: 0.8;
 }
 
 #hero-vector {
@@ -45,6 +46,7 @@ export default {}
   height: 100%;
   background: url(../assets/images/vectors/hero-vector.svg) no-repeat;
   background-size: contain;
-  bottom: -500px;
+  bottom: -365px;
+  left: -1px;
 }
 </style>
