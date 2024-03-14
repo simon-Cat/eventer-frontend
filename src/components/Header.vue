@@ -1,9 +1,27 @@
 <script>
-export default {}
+export default {
+  mounted() {
+    document.addEventListener('scroll', () => {
+      const documentOffsetTopValue = document.querySelector('body').getBoundingClientRect().top;
+
+      if (documentOffsetTopValue < 0) {
+        this.topOffset = true;
+      } else {
+        this.topOffset = false;
+      }
+    })
+  },
+  data() {
+    return {
+      topOffset: false,
+    }
+  }
+}
+
 </script>
 
 <template>
-  <header class="header section">
+  <header class="header section" :class="{shadow: topOffset}">
     <div class="logo"></div>
     <nav class="navigation">
       <a href="#" class="navigation-link">Вход</a>
@@ -20,6 +38,10 @@ export default {}
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: box-shadow var(--transition), background-color var(--transition), color var(--transition);
 }
 
 .logo {
@@ -37,7 +59,7 @@ export default {}
 
 .navigation {
   display: flex;
-  gap: 30px;
+  gap: 17px;
   font-size: 19px;
 }
 
@@ -48,5 +70,11 @@ export default {}
 
 .navigation-link:hover {
   opacity: var(--hover-opacity);
+}
+
+.shadow {
+  box-shadow: 0 1px 7px #a6a9a6;
+  background-color: #fff;
+  backdrop-filter: blur(10px);
 }
 </style>

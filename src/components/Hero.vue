@@ -4,7 +4,11 @@ export default {}
 
 <template>
   <section class="hero section">
-    <h2 class="title">Добро пожаловать в <span class="text-blue">Eventer</span></h2>
+    <h2 class="title">
+      Добро пожаловать в <span class="text-blue">Eventer</span>
+      <div class="circle"></div>
+    </h2>
+
     <p class="description">Наша цель - объединять людей.</p>
     <div id="hero-vector"></div>
   </section>
@@ -12,7 +16,7 @@ export default {}
 
 <style scoped>
 .hero {
-  padding-top: 60px;
+  padding-top: 80px;
   padding-bottom: 100px;
   background-color: var(--bg-color);
   position: relative;
@@ -23,6 +27,17 @@ export default {}
   font-weight: var(--medium-font-weigth);
   max-width: 1100px;
   margin: 0 auto 45px;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  border: 53px solid var(--blue-color);
+  border-radius: 50%;
+  top: -72px;
+  right: -51px;
 }
 
 .text-blue {
