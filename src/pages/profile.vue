@@ -1,5 +1,6 @@
 <script>
 import EvenList from '../components/EventList.vue'
+import Popup from '../components/Popup.vue'
 
 export default {
   data() {
@@ -129,7 +130,8 @@ export default {
     }
   },
   components: {
-    EvenList
+    EvenList,
+    Popup
   }
 }
 </script>
@@ -151,6 +153,43 @@ export default {
       <EvenList :events="userEvents" className="section" />
     </section>
   </section>
+  <Popup>
+    <div class="popup__vector" id="popup__vector-1"></div>
+    <section>
+      <h2 class="popup-title">Новое событие</h2>
+      <form class="form">
+        <div>
+          <label class="input-label" for="event-title">Название</label>
+          <input class="input-field" id="event-title" type="text" />
+        </div>
+        <div>
+          <label class="input-label" for="event-img">Заставка</label>
+          <input class="input-field" id="event-img" type="text" />
+        </div>
+        <div>
+          <label class="input-label" for="event-description">Описание</label>
+          <textarea class="input-field" id="event-description"></textarea>
+        </div>
+        <div>
+          <label class="input-label" for="event-datetime">Дата и время проведения</label>
+          <input class="input-field" id="event-datetime" type="datetime" />
+        </div>
+        <div>
+          <label class="input-label" for="event-place">Место проведения</label>
+          <input class="input-field" id="event-place" type="text" />
+        </div>
+        <div>
+          <label class="input-label">Место проведения</label>
+          <select class="input-field" name="event-type">
+            <option value="" selected disabled>Выберите тип мероприятия</option>
+            <option value="Частное мероприятие">Частное мероприятие</option>
+            <option value="Публичное мероприятие">Публичное мероприятие</option>
+          </select>
+        </div>
+        <button type="submit" class="btn form__btn">Создать</button>
+      </form>
+    </section>
+  </Popup>
 </template>
 
 <style scoped>
@@ -231,5 +270,62 @@ export default {
   background: url(../assets/images/vectors/profile-vector-2.svg) no-repeat;
   right: 0;
   bottom: 50px;
+}
+
+.popup-title {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.input-field {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 15px 10px;
+  box-shadow: 0 0 17px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  outline: none;
+  font-size: 19px;
+}
+
+.input-field:focus {
+  outline: 3px solid var(--blue-color);
+}
+
+.input-label {
+  display: block;
+  font-size: 17px;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.form__btn {
+  margin-bottom: 0;
+  padding: 15px;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.popup__vector {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+#popup__vector-1 {
+  width: 700px;
+  height: 700px;
+  background-image: url(../assets/images/vectors/profile-vector-2.svg);
+  left: -400px;
+  top: 50px;
+  transform: rotate(180deg);
 }
 </style>
