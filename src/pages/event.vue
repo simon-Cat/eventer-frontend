@@ -1,5 +1,10 @@
 <script>
-export default {}
+import Popup from '@/components/Popup.vue'
+export default {
+  components: {
+    Popup
+  }
+}
 </script>
 
 <template>
@@ -70,6 +75,50 @@ export default {}
     </ul>
     <button class="btn" type="button">Я пойду!</button>
   </section>
+  <Popup>
+    <section>
+      <div class="popup__vector"></div>
+      <h2 class="popup__title">Участники</h2>
+      <ul class="popup__followers">
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+        <li class="popup__follower">
+          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
+          <p class="popup__followername">Екатерина Мурова</p>
+        </li>
+      </ul>
+    </section>
+  </Popup>
 </template>
 
 <style scoped>
@@ -172,5 +221,60 @@ export default {}
 
 .btn:hover {
   opacity: 0.8;
+}
+
+.popup__title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 28px;
+}
+
+.popup__followers {
+  height: 300px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.popup__followers::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.popup__followers {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.popup__follower {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.popup__followerlogo {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.popup__followername {
+  font-size: 24px;
+}
+
+.popup__vector {
+  position: absolute;
+  background: url(../assets/images/vectors/followers_popup-vector.svg) no-repeat;
+  background-size: contain;
+  width: 400px;
+  height: 400px;
+  z-index: -1;
+  top: 0;
+  left: -100px;
 }
 </style>
