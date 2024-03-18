@@ -28,6 +28,10 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  resize: none;
+}
+
 .section {
   max-width: 1680px;
   width: 100%;
