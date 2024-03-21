@@ -153,7 +153,7 @@ export default {
       <EvenList :events="userEvents" className="section" />
     </section>
   </section>
-  <Popup>
+  <!-- <Popup>
     <div class="popup__vector" id="popup__vector-1"></div>
     <section>
       <h2 class="popup-title">Новое событие</h2>
@@ -189,7 +189,7 @@ export default {
         <button type="submit" class="btn form__btn">Создать</button>
       </form>
     </section>
-  </Popup>
+  </Popup> -->
 </template>
 
 <style scoped>

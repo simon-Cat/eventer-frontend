@@ -1,8 +1,15 @@
 <script>
 import Popup from '@/components/Popup.vue'
 export default {
+  props: ['id', 'eventlist'],
   components: {
     Popup
+  },
+  computed: {
+    event() {
+      const event = this.eventlist.filter((event) => event.id == this.id)[0]
+      return event
+    }
   }
 }
 </script>
@@ -12,62 +19,29 @@ export default {
   <div class="vector" id="vector_2"></div>
   <section class="event section">
     <img class="img" src="../assets/images/event_image.png" alt="" />
-    <h2 class="title">Вечеринка в честь празднования нового года</h2>
-    <p class="description">
-      Значимость этих проблем настолько очевидна, что консультация с широким активом влечет за собой
-      процесс внедрения и модернизации систем массового участия. Равным образом постоянный
-      количественный рост и сфера нашей активности позволяет оценить значение соответствующий
-      условий активизации. Повседневная практика показывает, что сложившаяся структура организации
-      играет важную роль в формировании соответствующий условий активизации.
-    </p>
+    <h2 class="title">{{ event.title }}</h2>
+    <p class="description">{{ event.description }}</p>
     <ul class="about-list">
       <li class="about-item">
         <p class="about-label">Организатор:</p>
-        <p class="about-text">Екатерина Мурова</p>
+        <p class="about-text">{{ event.creator }}</p>
       </li>
       <li class="about">
         <p class="about-label">Место проведения:</p>
-        <p class="about-text">Площадь восстания, Санкт-Петербург</p>
+        <p class="about-text">{{ event.city + ', ' + event.place }}</p>
       </li>
       <li class="about">
         <p class="about-label">Дата и время проведения:</p>
-        <p class="about-text">23 ноября 2024, 14:00</p>
+        <p class="about-text">{{ event.date + ', ' + event.time }}</p>
       </li>
       <li class="about">
         <p class="about-label">Тип мероприятия:</p>
-        <p class="about-text">Частное мероприятие</p>
+        <p class="about-text">{{ event.type }}</p>
       </li>
       <li class="followers">
         <p class="about-label">Участники:</p>
         <ul class="followers-list">
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
-            <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
-          </li>
-          <li class="follower-item">
+          <li class="follower-item" v-for="(follower, index) in event.followers" :key="index">
             <img class="follower-img" src="../assets/images/avatar.svg" alt="" />
           </li>
         </ul>
@@ -80,41 +54,9 @@ export default {
       <div class="popup__vector"></div>
       <h2 class="popup__title">Участники</h2>
       <ul class="popup__followers">
-        <li class="popup__follower">
+        <li class="popup__follower" v-for="(follower, index) in event.followers" :key="index">
           <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
-        </li>
-        <li class="popup__follower">
-          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
-        </li>
-        <li class="popup__follower">
-          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
-        </li>
-        <li class="popup__follower">
-          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
-        </li>
-        <li class="popup__follower">
-          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
-        </li>
-        <li class="popup__follower">
-          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
-        </li>
-        <li class="popup__follower">
-          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
-        </li>
-        <li class="popup__follower">
-          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
-        </li>
-        <li class="popup__follower">
-          <img class="popup__followerlogo" src="../assets/images/avatar.svg" alt="" />
-          <p class="popup__followername">Екатерина Мурова</p>
+          <p class="popup__followername">{{ follower.name }}</p>
         </li>
       </ul>
     </section>
@@ -190,6 +132,8 @@ export default {
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 120px;
+  height: 150px;
+  overflow: hidden;
 }
 
 .follower-item {

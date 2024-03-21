@@ -2,30 +2,33 @@
 export default {
   mounted() {
     document.addEventListener('scroll', () => {
-      const documentOffsetTopValue = document.querySelector('body').getBoundingClientRect().top;
+      const documentOffsetTopValue = document.querySelector('body').getBoundingClientRect().top
 
       if (documentOffsetTopValue < 0) {
-        this.topOffset = true;
+        this.topOffset = true
       } else {
-        this.topOffset = false;
+        this.topOffset = false
       }
     })
   },
   data() {
     return {
-      topOffset: false,
+      topOffset: false
     }
   }
 }
-
 </script>
 
 <template>
-  <header class="header section" :class="{shadow: topOffset}">
-    <div class="logo"></div>
+  <header class="header section" :class="{ shadow: topOffset }">
+    <RouterLink to="/">
+      <div class="logo"></div>
+    </RouterLink>
     <nav class="navigation">
-      <a href="#" class="navigation-link">Вход</a>
-      <a href="#" class="navigation-link">Регистрация</a>
+      <RouterLink to="/events" class="navigation-link">Все события</RouterLink>
+      <RouterLink to="/profile" class="navigation-link">Профиль</RouterLink>
+      <!-- <a href="#" class="navigation-link">Вход</a>
+      <a href="#" class="navigation-link">Регистрация</a> -->
     </nav>
   </header>
 </template>
@@ -41,7 +44,10 @@ export default {
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: box-shadow var(--transition), background-color var(--transition), color var(--transition);
+  transition:
+    box-shadow var(--transition),
+    background-color var(--transition),
+    color var(--transition);
 }
 
 .logo {
@@ -75,6 +81,5 @@ export default {
 .shadow {
   box-shadow: 0 1px 7px #a6a9a6;
   background-color: #fff;
-  backdrop-filter: blur(10px);
 }
 </style>
