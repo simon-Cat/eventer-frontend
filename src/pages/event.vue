@@ -2,6 +2,11 @@
 import Popup from '@/components/Popup.vue'
 export default {
   props: ['id', 'eventlist'],
+  data() {
+    return {
+      isMarkAsIGo: false
+    }
+  },
   components: {
     Popup
   },
@@ -19,6 +24,9 @@ export default {
     // Вызов метода компонента Popup
     openPopup() {
       this.$refs['followers-popup'].openPopup()
+    },
+    changeMark() {
+      this.isMarkAsIGo = !this.isMarkAsIGo
     }
   }
 }
@@ -60,7 +68,9 @@ export default {
     <button v-if="followersCount > 15" class="follower-count" @click="openPopup">
       {{ followersCount > 99 ? '99+' : followersCount }}
     </button>
-    <button class="btn" type="button">Я пойду!</button>
+    <button class="btn" :class="{ btn_red: isMarkAsIGo }" type="button" @click="changeMark">
+      {{ isMarkAsIGo === true ? 'Я не пойду' : 'Я пойду!' }}
+    </button>
   </section>
   <Popup ref="followers-popup">
     <section>
@@ -174,6 +184,10 @@ export default {
   border: none;
   transition: opacity var(--transition);
   cursor: pointer;
+}
+
+.btn_red {
+  background: var(--bg-red-color);
 }
 
 .btn:hover {
