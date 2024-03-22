@@ -38,3 +38,9 @@ textarea {
   padding-left: var(--x-padding-desktop);
   padding-right: var(--x-padding-desktop);
 }
+
+.active {
+  border-bottom: 2px solid var(--blue-color);
+  opacity: var(--hover-opacity);
+}
+

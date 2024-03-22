@@ -126,12 +126,25 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      isFormSubmited: false
     }
   },
   components: {
     EvenList,
     Popup
+  },
+  methods: {
+    openFormPopup() {
+      this.$refs['form-popup'].openPopup()
+    },
+    submitForm() {
+      this.isFormSubmited = true
+      setTimeout(() => {
+        this.$refs['form-popup'].closePopup()
+        this.isFormSubmited = false
+      }, 1000)
+    }
   }
 }
 </script>
@@ -147,17 +160,17 @@ export default {
         <p class="user-email">murovakate@ya.ru</p>
       </div>
     </div>
-    <button class="btn" type="button">Создать новое событие</button>
+    <button class="btn" type="button" @click="openFormPopup">Создать новое событие</button>
     <section class="user-events">
       <h2 class="title">Мои события</h2>
       <EvenList :events="userEvents" className="section" />
     </section>
   </section>
-  <!-- <Popup>
+  <Popup ref="form-popup">
     <div class="popup__vector" id="popup__vector-1"></div>
-    <section>
+    <section v-if="!isFormSubmited">
       <h2 class="popup-title">Новое событие</h2>
-      <form class="form">
+      <form class="form" @submit.prevent="submitForm">
         <div>
           <label class="input-label" for="event-title">Название</label>
           <input class="input-field" id="event-title" type="text" />
@@ -189,7 +202,10 @@ export default {
         <button type="submit" class="btn form__btn">Создать</button>
       </form>
     </section>
-  </Popup> -->
+    <section v-else>
+      <p>Отлично! Событие создано.</p>
+    </section>
+  </Popup>
 </template>
 
 <style scoped>
