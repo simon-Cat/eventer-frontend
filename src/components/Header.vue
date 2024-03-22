@@ -25,8 +25,8 @@ export default {
       <div class="logo"></div>
     </RouterLink>
     <nav class="navigation">
-      <RouterLink to="/events" class="navigation-link">Все события</RouterLink>
-      <RouterLink to="/profile" class="navigation-link">Профиль</RouterLink>
+      <RouterLink to="/events" class="navigation-link" active-class="active" exact>Все события</RouterLink>
+      <RouterLink to="/profile" class="navigation-link" active-class="active">Профиль</RouterLink>
       <!-- <a href="#" class="navigation-link">Вход</a>
       <a href="#" class="navigation-link">Регистрация</a> -->
     </nav>
