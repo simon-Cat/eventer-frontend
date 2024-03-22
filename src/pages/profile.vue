@@ -151,8 +151,8 @@ export default {
 
 <template>
   <section class="profile">
-    <div class="vector" id="vector_1"></div>
-    <div class="vector" id="vector_2"></div>
+    <div class="vector profile-vector" id="vector_1"></div>
+    <div class="vector profile-vector" id="vector_2"></div>
     <div class="profile-description">
       <img class="profile-logo" src="../assets/images/avatar.svg" alt="" />
       <div class="profile-data">
@@ -167,7 +167,7 @@ export default {
     </section>
   </section>
   <Popup ref="form-popup">
-    <div class="popup__vector" id="popup__vector-1"></div>
+    <div class="vector popup__vector" id="popup__vector-1"></div>
     <section v-if="!isFormSubmited">
       <h2 class="popup-title">Новое событие</h2>
       <form class="form" @submit.prevent="submitForm">
@@ -214,6 +214,7 @@ export default {
   padding-bottom: 80px;
   position: relative;
 }
+
 .profile-description {
   max-width: 500px;
   margin: 0 auto 100px;
@@ -227,16 +228,16 @@ export default {
   width: 130px;
   height: 130px;
   object-fit: contain;
-  border-radius: 50%;
+  border-radius: var(--raduis-percent-50);
 }
 
 .user-name {
-  font-size: 35px;
+  font-size: var(--text-size-35);
   font-weight: var(----medium-font-weigth);
 }
 
 .user-email {
-  font-size: 20px;
+  font-size: var(--text-size-20);
 }
 
 .btn {
@@ -246,17 +247,9 @@ export default {
   max-width: 50%;
   padding: 20px;
   background-color: var(--blue-color);
-  color: var(--bg-color);
-  font-size: 25px;
-  text-align: center;
-  border-radius: 10px;
-  border: none;
-  transition: opacity var(--transition);
-  cursor: pointer;
-}
-
-.btn:hover {
-  opacity: 0.8;
+  color: var(--white-color);
+  font-size: var(--text-size-26);
+  border-radius: var(--raduis-10);
 }
 
 .title {
@@ -264,11 +257,10 @@ export default {
   max-width: 250px;
   margin: 0 auto 50px;
   text-align: center;
-  font-size: 30px;
+  font-size: var(--text-size-30);
 }
 
-.vector {
-  position: absolute;
+.profile-vector {
   z-index: -1;
   background-size: cover;
 }
@@ -289,7 +281,7 @@ export default {
 }
 
 .popup-title {
-  font-size: 25px;
+  font-size: var(--text-size-26);
   text-align: center;
   margin-bottom: 40px;
 }
@@ -303,12 +295,10 @@ export default {
 .input-field {
   display: block;
   width: 100%;
-  border: none;
   padding: 15px 10px;
-  box-shadow: 0 0 17px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  outline: none;
-  font-size: 19px;
+  box-shadow: 0 0 17px var(--dark-shadow-color);
+  border-radius: var(--raduis-10);
+  font-size: var(--text-size-19);
 }
 
 .input-field:focus {
@@ -317,20 +307,19 @@ export default {
 
 .input-label {
   display: block;
-  font-size: 17px;
-  opacity: 0.8;
+  font-size: var(--text-size-18);
+  opacity: var(--opacity);
   margin-bottom: 5px;
 }
 
 .form__btn {
   margin-bottom: 0;
   padding: 15px;
-  font-size: 20px;
+  font-size: var(--text-size-20);
   margin-top: 15px;
 }
 
 .popup__vector {
-  position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -1;

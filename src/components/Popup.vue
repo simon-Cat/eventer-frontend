@@ -29,7 +29,7 @@ export default {
 <style scoped>
 .popup {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: var(--dark-popup-color);
   top: 0;
   bottom: 0;
   left: 0;
@@ -46,8 +46,8 @@ export default {
 
 .popup-wrapper {
   position: relative;
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: var(--white-color);
+  border-radius: var(--raduis-10);
   padding: 40px 50px;
   width: 100%;
   max-width: 600px;
@@ -63,12 +63,5 @@ export default {
   right: 20px;
   background: url(../assets/images/vectors/close_btn-vector.svg) no-repeat;
   background-size: contain;
-  border: none;
-  cursor: pointer;
-  transition: opacity var(--transition);
-}
-
-.close-btn:hover {
-  opacity: var(--hover-opacity);
 }
 </style>

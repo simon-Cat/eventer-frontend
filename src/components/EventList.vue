@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['events', 'className']
+  props: ['events', 'className']
 }
 </script>
 
@@ -44,13 +44,13 @@ export default {
   width: 500px;
   padding: 50px 32px;
   box-shadow: 6px 6px 17px rgba(73, 73, 73, 40%);
-  border-radius: 15px;
+  border-radius: var(--raduis-15);
   height: 550px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
   transition: transform var(--transition);
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .event-item:hover {
@@ -63,7 +63,7 @@ export default {
   height: 242px;
   object-fit: cover;
   margin-bottom: 37px;
-  border-radius: 10px;
+  border-radius: var(--raduis-10);
 }
 
 .caption {
@@ -74,12 +74,12 @@ export default {
 
 .caption-city,
 .caption-date {
-  font-size: 15px;
-  opacity: 0.8;
+  font-size: var(--text-size-15);
+  opacity: var(--opacity);
 }
 
 .event-title {
-  font-size: 18px;
+  font-size: var(--text-size-19);
   line-height: 26px;
   margin-bottom: 50px;
   height: 50px;
@@ -96,20 +96,20 @@ export default {
 .event-type-icon {
   width: 20px;
   height: 20px;
-  border-radius: 5px;
+  border-radius: var(--raduis-5);
   display: inline-block;
 }
 
 .event-type-icon_private {
-  background-color: #de6f6f;
+  background-color: var(--red-color);
 }
 
 .event-type-icon_public {
-  background-color: #3b76cf;
+  background-color: var(--blue-color);
 }
 
 .event-type-text {
-  font-size: 16px;
-  opacity: 0.8;
+  font-size: var(--text-size-16);
+  opacity: var(--opacity);
 }
 </style>

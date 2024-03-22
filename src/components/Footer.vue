@@ -4,25 +4,24 @@ export default {}
 
 <template>
   <footer class="footer">
-    <div id="footer-vector"></div>
+    <div class="vector" id="footer-vector"></div>
     <p class="footer__text">Давайте начнем объединять людей.</p>
   </footer>
 </template>
 
 <style>
 .footer {
-  background: var(--bg-color);
+  background: var(--light-blue-color);
   position: relative;
   padding: 100px 0;
 }
 
 .footer__text {
   text-align: center;
-  font-size: 40px;
+  font-size: var(--text-size-40);
 }
 
 #footer-vector {
-  position: absolute;
   background: url(../assets/images/vectors/footer-vector.svg) no-repeat;
   background-size: cover;
   width: 100%;

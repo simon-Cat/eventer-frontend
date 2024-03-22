@@ -25,7 +25,9 @@ export default {
       <div class="logo"></div>
     </RouterLink>
     <nav class="navigation">
-      <RouterLink to="/events" class="navigation-link" active-class="active" exact>Все события</RouterLink>
+      <RouterLink to="/events" class="navigation-link" active-class="active" exact
+        >Все события</RouterLink
+      >
       <RouterLink to="/profile" class="navigation-link" active-class="active">Профиль</RouterLink>
       <!-- <a href="#" class="navigation-link">Вход</a>
       <a href="#" class="navigation-link">Регистрация</a> -->
@@ -35,7 +37,7 @@ export default {
 
 <style>
 .header {
-  background-color: #d5e3ef;
+  background-color: var(--light-blue-color);
   padding-top: 20px;
   padding: 20px var(--x-padding-desktop);
   display: flex;
@@ -60,13 +62,13 @@ export default {
 }
 
 .logo:hover {
-  opacity: var(--hover-opacity);
+  opacity: var(--opacity);
 }
 
 .navigation {
   display: flex;
   gap: 17px;
-  font-size: 19px;
+  font-size: var(--text-size-19);
 }
 
 .navigation-link {
@@ -75,11 +77,11 @@ export default {
 }
 
 .navigation-link:hover {
-  opacity: var(--hover-opacity);
+  opacity: var(--opacity);
 }
 
 .shadow {
-  box-shadow: 0 1px 7px #a6a9a6;
-  background-color: #fff;
+  box-shadow: 0 1px 7px var(--dark-shadow-color);
+  background-color: var(--white-color);
 }
 </style>

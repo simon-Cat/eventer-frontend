@@ -33,8 +33,8 @@ export default {
 </script>
 
 <template>
-  <div class="vector" id="vector_1"></div>
-  <div class="vector" id="vector_2"></div>
+  <div class="vector event-vector" id="vector_1"></div>
+  <div class="vector event-vector" id="vector_2"></div>
   <section class="event section">
     <img class="img" src="../assets/images/event_image.png" alt="" />
     <h2 class="title">{{ event.title }}</h2>
@@ -74,7 +74,7 @@ export default {
   </section>
   <Popup ref="followers-popup">
     <section>
-      <div class="popup__vector"></div>
+      <div class="vector popup__vector"></div>
       <h2 class="popup__title">Участники</h2>
       <ul class="popup__followers">
         <li class="popup__follower" v-for="(follower, index) in event.followers" :key="index">
@@ -93,10 +93,9 @@ export default {
   position: relative;
 }
 
-.vector {
+.event-vector {
   background: url(../assets/images/vectors/event-vector.svg) no-repeat;
   background-size: contain;
-  position: absolute;
 }
 
 #vector_1 {
@@ -117,17 +116,17 @@ export default {
   width: 100%;
   height: 590px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: var(--raduis-15);
   margin-bottom: 20px;
 }
 
 .title {
-  font-size: 35px;
+  font-size: var(--text-size-35);
   margin-bottom: 30px;
 }
 
 .description {
-  font-size: 20px;
+  font-size: var(--text-size-20);
   text-align: justify;
   margin-bottom: 60px;
   max-width: 70%;
@@ -140,12 +139,12 @@ export default {
 }
 
 .about-label {
-  font-size: 20px;
-  opacity: 0.8;
+  font-size: var(--text-size-20);
+  opacity: var(--opacity);
 }
 
 .about-text {
-  font-size: 25px;
+  font-size: var(--text-size-26);
 }
 
 .followers-list {
@@ -177,27 +176,24 @@ export default {
   max-width: 50%;
   padding: 20px;
   background-color: var(--blue-color);
-  color: var(--bg-color);
-  font-size: 25px;
+  color: var(--white-color);
+  font-size: var(--text-size-26);
   text-align: center;
-  border-radius: 10px;
-  border: none;
-  transition: opacity var(--transition);
-  cursor: pointer;
+  border-radius: var(--raduis-10);
 }
 
 .btn_red {
-  background: var(--bg-red-color);
+  background: var(--red-color);
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: var(--opacity);
 }
 
 .popup__title {
   text-align: center;
   margin-bottom: 50px;
-  font-size: 28px;
+  font-size: var(--text-size-28);
 }
 
 .popup__followers {
@@ -231,15 +227,14 @@ export default {
   width: 55px;
   height: 55px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: var(--raduis-percent-50);
 }
 
 .popup__followername {
-  font-size: 24px;
+  font-size: var(--text-size-24);
 }
 
 .popup__vector {
-  position: absolute;
   background: url(../assets/images/vectors/followers_popup-vector.svg) no-repeat;
   background-size: contain;
   width: 400px;
@@ -252,17 +247,14 @@ export default {
 .follower-count {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: var(--raduis-percent-50);
   padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
-  outline: none;
   background: var(--blue-color);
-  color: #fff;
-  cursor: pointer;
-  font-size: 19px;
+  color: var(--white-color);
+  font-size: var(--text-size-19);
   transform: translate(245px, -140px);
 }
 </style>

@@ -7,7 +7,7 @@ export default {}
     <h2 class="title">Что <span class="text-blue">Eventer</span> может?</h2>
     <ul class="list">
       <li class="list-item">
-        <div class="features-vector" id="features-vector-1"></div>
+        <div class="vector features-vector" id="features-vector-1"></div>
         <p class="list-item-text">
           Создавайть события, связанные с развлечениями, бизнесом или хобби.
         </p>
@@ -20,7 +20,7 @@ export default {}
         />
       </li>
       <li class="list-item">
-        <div class="features-vector" id="features-vector-2"></div>
+        <div class="vector features-vector" id="features-vector-2"></div>
         <img
           class="list-item-img"
           src="../assets/images/landing-img-2.png"
@@ -31,7 +31,7 @@ export default {}
         <p class="list-item-text">Следить за тем, кто подписан на ваше события.</p>
       </li>
       <li class="list-item">
-        <div class="features-vector" id="features-vector-3"></div>
+        <div class="vector features-vector" id="features-vector-3"></div>
         <p class="list-item-text">Уведомлять подписчиков об изменениях в вашем событии.</p>
         <img
           class="list-item-img"
@@ -54,7 +54,7 @@ export default {}
 .title {
   max-width: 375px;
   margin: 90px auto 0;
-  font-size: 40px;
+  font-size: var(--text-size-40);
   z-index: 1;
   position: relative;
   margin-bottom: 80px;
@@ -72,7 +72,6 @@ export default {}
   height: 350px;
   background: url(../assets/images/vectors/features-vector.svg) no-repeat;
   background-size: contain;
-  position: absolute;
   z-index: -1;
 }
 
@@ -97,7 +96,7 @@ export default {}
 }
 
 .list-item-text {
-  font-size: 26px;
+  font-size: var(--text-size-26);
   max-width: 630px;
   line-height: 30px;
   align-self: center;
@@ -107,8 +106,8 @@ export default {}
   width: 600px;
   height: 500px;
   object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #aca4a4;
+  border-radius: var(--raduis-10);
+  box-shadow: 0 0 10px var(--dark-shadow-color);
 }
 
 .text-blue {
