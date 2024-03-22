@@ -9,6 +9,16 @@ export default {
     event() {
       const event = this.eventlist.filter((event) => event.id == this.id)[0]
       return event
+    },
+    followersCount() {
+      const followersCount = this.event.followers.length
+      return followersCount
+    }
+  },
+  methods: {
+    // Вызов метода компонента Popup
+    openPopup() {
+      this.$refs['followers-popup'].openPopup()
     }
   }
 }
@@ -47,9 +57,12 @@ export default {
         </ul>
       </li>
     </ul>
+    <button v-if="followersCount > 15" class="follower-count" @click="openPopup">
+      {{ followersCount > 99 ? '99+' : followersCount }}
+    </button>
     <button class="btn" type="button">Я пойду!</button>
   </section>
-  <Popup>
+  <Popup ref="followers-popup">
     <section>
       <div class="popup__vector"></div>
       <h2 class="popup__title">Участники</h2>
@@ -220,5 +233,22 @@ export default {
   z-index: -1;
   top: 0;
   left: -100px;
+}
+
+.follower-count {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: var(--blue-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 19px;
+  transform: translate(245px, -140px);
 }
 </style>
