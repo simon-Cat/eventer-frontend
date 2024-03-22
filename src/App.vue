@@ -23,7 +23,7 @@ export default {
       <component :is="Component" :eventlist="eventlist" />
     </RouterView>
   </main>
-  <Footer />
+  <Footer v-if="$route.path === '/'" />
 </template>
 
 <style></style>
