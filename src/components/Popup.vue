@@ -1,11 +1,26 @@
 <script>
-export default {}
+export default {
+  props: ['openPopupHandler'],
+  data() {
+    return {
+      isPopupHidden: true
+    }
+  },
+  methods: {
+    openPopup() {
+      this.isPopupHidden = false
+    },
+    closePopup() {
+      this.isPopupHidden = true
+    }
+  }
+}
 </script>
 
 <template>
-  <div class="popup">
+  <div class="popup" :class="{ popup_hidden: isPopupHidden }" @click.self="closePopup">
     <section class="popup-wrapper">
-      <button class="close-btn" type="button"></button>
+      <button class="close-btn" type="button" @click="closePopup"></button>
       <slot></slot>
     </section>
   </div>
@@ -23,6 +38,10 @@ export default {}
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.popup_hidden {
+  visibility: hidden;
 }
 
 .popup-wrapper {
