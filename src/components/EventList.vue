@@ -1,8 +1,8 @@
 <script>
-import EventCard from './EventCard.vue';
+import EventCard from './EventCard.vue'
 
 export default {
-  props: ['events', 'className'],
+  props: ['events'],
   components: {
     EventCard
   }
@@ -10,16 +10,29 @@ export default {
 </script>
 
 <template>
-  <ul class="event-list" :class="className">
+  <ul class="event-list">
     <EventCard v-for="event in events" :event="event" :key="event.id" />
   </ul>
 </template>
 
 <style scoped>
 .event-list {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 63px;
-  column-gap: 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 60px 20px;
+}
+
+@media screen and (max-width: 1250px) {
+  .event-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 854px) {
+  .event-list {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

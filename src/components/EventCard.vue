@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <router-link :to="{ path: `/events/${event.id}` }">
+  <router-link :to="{ path: `/events/${event.id}` }" class="event-link">
     <li class="event-card">
       <div
         class="vector event-vector"
@@ -13,11 +13,7 @@ export default {
           event.type === 'Публичное мероприятие' ? 'event-vector_public' : 'event-vector_private'
         ]"
       ></div>
-      <img
-        class="event-image"
-        src="../assets/images/event_image.jpg"
-        alt=""
-      />
+      <img class="event-image" src="../assets/images/event_image.jpg" alt="" />
       <div class="caption">
         <span class="caption-city">{{ event.city }}</span>
         <span class="caption-date">{{ event.date }}</span>
@@ -39,6 +35,11 @@ export default {
 </template>
 
 <style scoped>
+.event-link {
+  display: block;
+  width: 100%;
+}
+
 .event-vector {
   width: 0;
   height: 0;
@@ -60,8 +61,8 @@ export default {
 }
 
 .event-card {
+  width: 100%;
   position: relative;
-  width: 500px;
   padding: 50px 32px;
   box-shadow: 6px 6px 17px rgba(73, 73, 73, 40%);
   border-radius: var(--raduis-15);
@@ -111,6 +112,7 @@ export default {
   height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 310px;
 }
 
 .event-type {
@@ -137,5 +139,24 @@ export default {
 .event-type-text {
   font-size: var(--text-size-16);
   opacity: var(--opacity);
+}
+
+@media screen and (max-width: 854px) {
+  .event-card {
+    padding: 30px 20px 10px;
+    height: 450px;
+  }
+
+  .event-image {
+    margin-bottom: 20px;
+  }
+
+  .caption {
+    margin-bottom: 20px;
+  }
+
+  .event-title {
+    margin-bottom: 30px;
+  }
 }
 </style>
