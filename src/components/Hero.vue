@@ -23,7 +23,7 @@ export default {}
 }
 
 .title {
-  font-size: var(--text-size-70);
+  font-size: var(--text-size-66);
   font-weight: var(--medium-font-weigth);
   max-width: 1100px;
   margin: 0 auto 45px;
