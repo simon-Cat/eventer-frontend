@@ -39,7 +39,7 @@ export default {
 .header {
   background-color: var(--light-blue-color);
   padding-top: 20px;
-  padding: 20px var(--x-padding-desktop);
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,5 +83,12 @@ export default {
 .shadow {
   box-shadow: 0 1px 7px var(--dark-shadow-color);
   background-color: var(--white-color);
+}
+
+@media screen and (max-width: 445px) {
+  .navigation {
+    gap: 10px;
+    font-size: var(--text-size-1);
+  }
 }
 </style>
