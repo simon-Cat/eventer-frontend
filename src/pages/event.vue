@@ -36,7 +36,7 @@ export default {
   <div class="vector event-vector" id="vector_1"></div>
   <div class="vector event-vector" id="vector_2"></div>
   <section class="event section">
-    <img class="img" src="../assets/images/event_image.png" alt="" />
+    <img class="img" src="../assets/images/event_image.jpg" alt="" />
     <h2 class="title">{{ event.title }}</h2>
     <p class="description">{{ event.description }}</p>
     <ul class="about-list">

@@ -244,7 +244,7 @@ export default {
   display: block;
   margin: 0 auto 150px;
   width: 100%;
-  max-width: 50%;
+  max-width: 350px;
   padding: 20px;
   background-color: var(--blue-color);
   color: var(--white-color);
