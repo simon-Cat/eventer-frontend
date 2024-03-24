@@ -27,4 +27,16 @@ export default {
   opacity: var(--opacity);
   padding: 50px 0 30px;
 }
+
+@media screen and (max-width: 581px) {
+  .title {
+    font-size: var(--text-size-26);
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .title {
+    font-size: var(--text-size-24);
+  }
+}
 </style>

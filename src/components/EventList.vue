@@ -2,7 +2,7 @@
 import EventCard from './EventCard.vue'
 
 export default {
-  props: ['events'],
+  props: ['events', 'className'],
   components: {
     EventCard
   }
@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <ul class="event-list">
+  <ul class="event-list" :class="className">
     <EventCard v-for="event in events" :event="event" :key="event.id" />
   </ul>
 </template>
