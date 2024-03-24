@@ -9,7 +9,8 @@ export default {}
       <li class="list-item">
         <div class="vector features-vector" id="features-vector-1"></div>
         <p class="list-item-text">
-          Создавайть события, связанные с развлечениями, бизнесом или хобби.
+          Организовывайте вечеринки, концерты, мастер-классы, выставки, семинары и другие
+          мероприятия, которые будут интересны и полезны для участников.
         </p>
         <img
           class="list-item-img"
@@ -28,11 +29,17 @@ export default {}
           width="424"
           height="270"
         />
-        <p class="list-item-text">Следить за тем, кто подписан на ваше события.</p>
+        <p class="list-item-text">
+          Следите за тем, кто подписан на ваше событие, чтобы иметь представление о том, сколько
+          человек заинтересовано в вашем мероприятии и планирует его посетить.
+        </p>
       </li>
       <li class="list-item">
         <div class="vector features-vector" id="features-vector-3"></div>
-        <p class="list-item-text">Уведомлять подписчиков об изменениях в вашем событии.</p>
+        <p class="list-item-text">
+          Держите подписчиков в курсе о любых актуализациях и событиях,
+          происходящих в рамках вашего мероприятия.
+        </p>
         <img
           class="list-item-img"
           src="../assets/images/landing-img-1.png"
@@ -52,7 +59,7 @@ export default {}
 }
 
 .title {
-  max-width: 375px;
+  max-width: 380px;
   margin: 90px auto 0;
   font-size: var(--text-size-40);
   z-index: 1;
@@ -97,9 +104,11 @@ export default {}
 
 .list-item-text {
   font-size: var(--text-size-26);
+  font-weight: var(--light-font-weigth);
   max-width: 630px;
   line-height: 30px;
   align-self: center;
+  text-align: center;
 }
 
 .list-item-img {
