@@ -9,6 +9,7 @@
   --dark-popup-color: #000000bf;
 
   /* font weight */
+  --light-font-weigth: 300;
   --regular-font-weigth: 400;
   --medium-font-weigth: 500;
 
@@ -24,6 +25,7 @@
   --text-size-30: 30px;
   --text-size-35: 35px;
   --text-size-40: 40px;
+  --text-size-66: 66px;
   --text-size-70: 70px;
   --text-size-100: 100px;
 
@@ -47,7 +49,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Raleway', Georgia, 'Times New Roman', Times, serif;
   font-optical-sizing: auto;
   color: var(--dark-color);
   font-weight: var(--regular-font-weigth);
