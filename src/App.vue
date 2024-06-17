@@ -1,21 +1,29 @@
 <script>
 import Header from './components/Header.vue'
-import Hero from './components/Hero.vue'
-import Features from './components/Features.vue'
+import Footer from './components/Footer.vue'
+import events from './utils/events.js'
 
 export default {
+  data() {
+    return {
+      eventlist: events
+    }
+  },
   components: {
     Header,
-    Hero,
-    Features
+    Footer
   }
 }
 </script>
 
 <template>
   <Header />
-  <Hero />
-  <Features />
+  <main>
+    <RouterView v-slot="{ Component }">
+      <component :is="Component" :eventlist="eventlist" />
+    </RouterView>
+  </main>
+  <Footer v-if="$route.path === '/'" />
 </template>
 
 <style></style>

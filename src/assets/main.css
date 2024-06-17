@@ -1,12 +1,50 @@
 :root {
+  /* color */
   --blue-color: #3b76cf;
-  --bg-color: #d5e3ef;
-  --text-dark-color: #494949;
-  --text-blue-color: #3b76cf;
+  --red-color: #e25858;
+  --light-blue-color: #d5e3ef;
+  --white-color: #fff;
+  --dark-color: #494949;
+  --dark-shadow-color: #aca4a4;
+  --dark-popup-color: #000000bf;
+
+  /* font weight */
+  --light-font-weigth: 300;
   --regular-font-weigth: 400;
   --medium-font-weigth: 500;
-  --transition: 0.4s ease;
-  --hover-opacity: 0.8;
+
+  /* font size */
+  --text-size-15: 15px;
+  --text-size-16: 16px;
+  --text-size-18: 18px;
+  --text-size-19: 19px;
+  --text-size-20: 20px;
+  --text-size-24: 24px;
+  --text-size-26: 26px;
+  --text-size-28: 28px;
+  --text-size-30: 30px;
+  --text-size-35: 35px;
+  --text-size-40: 40px;
+  --text-size-50: 50px;
+  --text-size-58: 58px;
+  --text-size-66: 66px;
+  --text-size-70: 70px;
+  --text-size-80: 80px;
+  --text-size-100: 100px;
+
+  /* transition */
+  --transition: 0.2s ease;
+
+  /* opacity */
+  --opacity: 0.8;
+
+  /* border radius */
+  --raduis-5: 5px;
+  --raduis-10: 10px;
+  --raduis-15: 15px;
+  --raduis-percent-50: 50%;
+
+  /* padding */
   --x-padding-desktop: 40px;
 }
 
@@ -14,9 +52,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Raleway', Georgia, 'Times New Roman', Times, serif;
   font-optical-sizing: auto;
-  color: var(--text-dark-color);
+  color: var(--dark-color);
   font-weight: var(--regular-font-weigth);
 }
 
@@ -28,9 +66,48 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  resize: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: opacity var(--transition);
+  text-align: center;
+}
+
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  opacity: var(--opacity);
+}
+
 .section {
   max-width: 1680px;
   width: 100%;
   padding-left: var(--x-padding-desktop);
   padding-right: var(--x-padding-desktop);
+}
+
+.active {
+  border-bottom: 2px solid var(--blue-color);
+  opacity: var(--hover-opacity);
+}
+
+.vector {
+  position: absolute;
+}
+
+@media screen and (max-width: 445px) {
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
